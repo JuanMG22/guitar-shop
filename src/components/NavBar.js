@@ -1,3 +1,5 @@
+import CartWidget from './CartWidget'
+
 const NavBar = () => {
     return (
     <nav className="bg-gray-800">
@@ -29,6 +31,7 @@ const NavBar = () => {
           </div>
         </div>
       </div>
+      <CartWidget cantidad="0"/>
 
     </div>
   </div>
