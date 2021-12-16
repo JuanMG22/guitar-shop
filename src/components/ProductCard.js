@@ -9,7 +9,7 @@ const ProductCard = (props) => {
                 <img className="h-56 w-full object-contain mt-2" src="https://s3-us-west-2.amazonaws.com/static.music-man.com/website/images/instruments/instrument-7.png?1631591626" alt="NIKE AIR"/>
                 <div className="flex items-center justify-between px-4 py-2 bg-gray-900">
                     <h1 className="text-gray-200 font-bold text-xl">$ {props.precio}</h1>
-                    <button className="px-3 py-1 bg-gray-200 text-sm text-gray-900 font-semibold rounded"></button>
+                    <button className="px-3 py-1 bg-gray-200 text-sm text-gray-900 font-semibold rounded">Comprar</button>
                 </div>
             </div>
         </>
