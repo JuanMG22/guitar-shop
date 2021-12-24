@@ -61,17 +61,18 @@ const ItemList = () => {
     );
   } else {
     return (
-      <>
+      <div className="flex justify-start">
         {productos?.map((producto) => {
           return (
             <Item
+              key={producto.id}
               titulo={producto.titulo}
               precio={producto.precio}
               pictureUrl={producto.imagen}
             />
           );
         })}
-      </>
+      </div>
     );
   }
 };
