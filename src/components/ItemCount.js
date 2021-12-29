@@ -13,13 +13,13 @@ const ItemCount = ({stock, initial, onAdd}) => {
         
     return (
         <>
-            <button onClick={botonResta} className="px-3 py-1 bg-gray-800 text-sm text-gray-100 font-semibold rounded"
+            <button onClick={botonResta} className="mx-5 px-3 py-1 bg-gray-800 text-sm text-gray-100 font-semibold rounded"
             >-</button>
-            <h3 className="text-3xl text-gray-200">{contador}</h3>
-            <button onClick={botonSuma} className="px-3 py-1 bg-gray-800 text-sm text-gray-100 font-semibold rounded"
+            <h3 className="text-3xl text-gray-800">{contador}</h3>
+            <button onClick={botonSuma} className="mx-5 px-3 py-1 bg-gray-800 text-sm text-gray-100 font-semibold rounded"
             >+</button>
-            <button onClick={onAdd} className="px-3 py-1 bg-gray-800 text-sm text-gray-100 font-semibold rounded"
-            >onADD</button>
+            <button onClick={onAdd} className="px-3 py-1 mx-5 bg-gray-800 text-sm text-gray-100 font-semibold rounded"
+            >Agregar al Carrito</button>
         </>
     )
 }

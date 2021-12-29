@@ -1,0 +1,42 @@
+[
+    {
+      "precio": 550000,
+      "id": 1,
+      "titulo": "MUSICMAN JP-6",
+      "categoria": "Musicman",
+      "descripcion": "Guitarra Musicman signature John Petrucci",
+      "imagen": "https://s3-us-west-2.amazonaws.com/static.music-man.com/website/images/instruments/instrument-7.png?1631591626"
+    },
+    {
+      "precio": 580000,
+      "id": 2,
+      "titulo": "MUSICMAN Majesty",
+      "categoria": "Musicman",
+      "descripcion": "Guitarra Musicman signature John Petrucci",
+      "imagen": "https://s3-us-west-2.amazonaws.com/static.music-man.com/website/images/instruments/instrument-77.png?1631591609"
+    },
+    {
+      "precio": 580000,
+      "id": 2,
+      "titulo": "MUSICMAN Majesty",
+      "categoria": "Musicman",
+      "descripcion": "Guitarra Musicman signature John Petrucci",
+      "imagen": "https://s3-us-west-2.amazonaws.com/static.music-man.com/website/images/instruments/instrument-77.png?1631591609"
+    },
+    {
+      "precio": 580000,
+      "id": 2,
+      "titulo": "MUSICMAN Majesty",
+      "categoria": "Musicman",
+      "descripcion": "Guitarra Musicman signature John Petrucci",
+      "imagen": "https://s3-us-west-2.amazonaws.com/static.music-man.com/website/images/instruments/instrument-77.png?1631591609"
+    },
+    {
+      "precio": 580000,
+      "id": 2,
+      "titulo": "MUSICMAN Majesty",
+      "categoria": "Musicman",
+      "descripcion": "Guitarra Musicman signature John Petrucci",
+      "imagen": "https://s3-us-west-2.amazonaws.com/static.music-man.com/website/images/instruments/instrument-77.png?1631591609"
+    }
+]

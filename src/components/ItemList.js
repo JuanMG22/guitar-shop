@@ -21,6 +21,33 @@ const ItemList = () => {
       imagen:
         "https://s3-us-west-2.amazonaws.com/static.music-man.com/website/images/instruments/instrument-77.png?1631591609",
     },
+    {
+      precio: 580000,
+      id: 2,
+      titulo: "MUSICMAN Majesty",
+      categoria: "Musicman",
+      descripcion: "Guitarra Musicman signature John Petrucci",
+      imagen:
+        "https://s3-us-west-2.amazonaws.com/static.music-man.com/website/images/instruments/instrument-77.png?1631591609",
+    },
+    {
+      precio: 580000,
+      id: 2,
+      titulo: "MUSICMAN Majesty",
+      categoria: "Musicman",
+      descripcion: "Guitarra Musicman signature John Petrucci",
+      imagen:
+        "https://s3-us-west-2.amazonaws.com/static.music-man.com/website/images/instruments/instrument-77.png?1631591609",
+    },
+    {
+      precio: 580000,
+      id: 2,
+      titulo: "MUSICMAN Majesty",
+      categoria: "Musicman",
+      descripcion: "Guitarra Musicman signature John Petrucci",
+      imagen:
+        "https://s3-us-west-2.amazonaws.com/static.music-man.com/website/images/instruments/instrument-77.png?1631591609",
+    }
   ];
 
   const getProductos = () => {
@@ -61,7 +88,7 @@ const ItemList = () => {
     );
   } else {
     return (
-      <div className="flex justify-start">
+      <div className="flex justify-evenly flex-wrap">
         {productos?.map((producto) => {
           return (
             <Item
