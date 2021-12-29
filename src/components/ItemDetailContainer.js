@@ -10,11 +10,14 @@ const ItemDetailContainer = (props) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-      fetch("../productos.json")
-        .then((response) => response.json())
-        .then((json) => {
-            console.log(json)
-        })
+      setTimeout(() => {
+          fetch("https://juanmg22.github.io/guitar-shop/src/productos.json")
+            .then((response) => response.json())
+            .then((json) => {
+                setData(json);
+            })
+            setLoading(false);
+      }, 2000);
 }, [])
 
   if (loading) {
@@ -31,7 +34,16 @@ const ItemDetailContainer = (props) => {
   } else {
     return (
       <>
-       
+        {data?.map((producto) => {
+          return (
+            <ItemDetail
+              key={producto.id}
+              titulo={producto.titulo}
+              precio={producto.precio}
+              pictureUrl={producto.imagen}
+            />
+          );
+        })}
       </>
     );
   }
