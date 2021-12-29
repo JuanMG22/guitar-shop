@@ -34,6 +34,7 @@ const ItemDetailContainer = (props) => {
   } else {
     return (
       <>
+      <h2 className="text-3xl font-sans text-black text-center mt-5">Detalle de producto</h2>
         {data?.map((producto) => {
           return (
             <ItemDetail
