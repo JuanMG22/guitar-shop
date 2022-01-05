@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail"
 
-const ItemDetailContainer = (props) => {
+const ItemDetailContainer = () => {
 
 
 
 
-  const [data, setData] = useState();
+  const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const ItemDetailContainer = (props) => {
                 setData(json);
             })
             setLoading(false);
-      }, 2000);
+      }, 800);
 }, [])
 
   if (loading) {
@@ -35,16 +35,7 @@ const ItemDetailContainer = (props) => {
     return (
       <>
       <h2 className="text-3xl font-sans text-black text-center mt-5">Detalle de producto</h2>
-        {data?.map((producto) => {
-          return (
-            <ItemDetail
-              key={producto.id}
-              titulo={producto.titulo}
-              precio={producto.precio}
-              pictureUrl={producto.imagen}
-            />
-          );
-        })}
+            <ItemDetail producto={data}/>
       </>
     );
   }

@@ -14,7 +14,7 @@ const ItemList = () => {
                 setData(json);
             })
             setLoading(false);
-      }, 2000);
+      }, 800);
 }, [])
 
   if (loading) {
@@ -30,7 +30,7 @@ const ItemList = () => {
     );
   } else {
     return (
-      <div className="flex justify-evenly flex-wrap">
+      <section className="flex justify-evenly flex-wrap">
         {data?.map((producto) => {
           return (
             <Item
@@ -38,10 +38,11 @@ const ItemList = () => {
               titulo={producto.titulo}
               precio={producto.precio}
               pictureUrl={producto.imagen}
+              id={producto.id}
             />
           );
         })}
-      </div>
+      </section>
     );
   }
 };

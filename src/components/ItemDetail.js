@@ -1,7 +1,10 @@
 import ItemCount from "./ItemCount";
 
 
-const Item = ({ titulo, precio, pictureUrl, categoria }) => {
+const Item = ({producto}) => {
+  
+  const { titulo, precio, pictureUrl, categoria, id } = producto
+
   const onAdd = () => {}
   return (
     <>

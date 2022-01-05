@@ -1,15 +1,16 @@
 import './App.css';
 import NavBar from './components/NavBar'
-import ItemListContainer from './components/ItemListContainer'
-import ItemDetailContainer from './components/ItemDetailContainer';
+import Footer from './components/Footer';
+import { BrowserRouter } from "react-router-dom";
+import Main from './components/Main';
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <NavBar />
-      <ItemListContainer greeting="Bienvenido a Guitar Shop" />
-      <ItemDetailContainer />
-    </>
+      <Main />
+      <Footer />
+    </BrowserRouter>
   );
 }
 

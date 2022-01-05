@@ -1,7 +1,9 @@
-const Item = ({ titulo, precio, pictureUrl }) => {
+import { Link } from "react-router-dom";
+
+const Item = ({ titulo, precio, pictureUrl, id }) => {
   return (
     <>
-      <div className="max-w-xs bg-white border border-gray-900 rounded-lg overflow-hidden my-10 ml-5 hover:shadow-lg hover:shadow-gray-900 hover:scale-105 transition-all">
+      <article className="max-w-xs bg-white border border-gray-900 rounded-lg overflow-hidden my-20 ml-5 hover:shadow-lg hover:shadow-gray-900 hover:scale-105 transition-all">
         <div className="px-4 py-2">
           <h1 className="text-gray-900 font-bold text-2xl uppercase">
             {titulo}
@@ -18,11 +20,11 @@ const Item = ({ titulo, precio, pictureUrl }) => {
         />
         <div className="flex items-center justify-between px-4 py-2 bg-gray-900">
           <h1 className="text-gray-200 font-bold text-xl">$ {precio}</h1>
-          <button className="px-3 py-1 bg-gray-800 text-sm text-gray-100 font-semibold rounded">
+          <Link to={"/item/"+id} className="px-3 py-1 bg-gray-800 text-sm text-gray-100 font-semibold rounded">
             Ver más
-          </button>
+          </Link>
         </div>
-      </div>
+      </article>
     </>
   );
 };
