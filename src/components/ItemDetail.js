@@ -1,8 +1,10 @@
+import { useParams } from "react-router-dom";
 import ItemCount from "./ItemCount";
 
 
-const Item = ({ titulo, precio, pictureUrl, categoria }) => {
+const ItemDetail = ({ titulo, precio, pictureUrl, categoria }) => {
   
+  const { id } = useParams()
   const onAdd = () => {}
   return (
     <>
@@ -62,4 +64,4 @@ const Item = ({ titulo, precio, pictureUrl, categoria }) => {
   );
 };
 
-export default Item;
+export default ItemDetail;

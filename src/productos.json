@@ -6,7 +6,8 @@
       "categoria": "Musicman",
       "descripcion": "Guitarra Musicman signature John Petrucci",
       "imagen": "https://s3-us-west-2.amazonaws.com/static.music-man.com/website/images/instruments/instrument-7.png?1631591626"
-    },
+    }
+    ,
     {
       "precio": 580000,
       "id": 2,
@@ -14,29 +15,59 @@
       "categoria": "Musicman",
       "descripcion": "Guitarra Musicman signature John Petrucci",
       "imagen": "https://s3-us-west-2.amazonaws.com/static.music-man.com/website/images/instruments/instrument-77.png?1631591609"
-    },
+    }
+    ,
     {
       "precio": 580000,
       "id": 3,
-      "titulo": "MUSICMAN Majesty",
+      "titulo": "MUSICMAN Axis",
       "categoria": "Musicman",
-      "descripcion": "Guitarra Musicman signature John Petrucci",
-      "imagen": "https://s3-us-west-2.amazonaws.com/static.music-man.com/website/images/instruments/instrument-77.png?1631591609"
-    },
+      "descripcion": "Guitarra Musicman Axis",
+      "imagen": "https://s3-us-west-2.amazonaws.com/static.music-man.com/website/images/instruments/instrument-3.png?1626125525"
+    }
+    ,
     {
       "precio": 580000,
       "id": 4,
-      "titulo": "MUSICMAN Majesty",
+      "titulo": "MUSICMAN Steve Mourse",
       "categoria": "Musicman",
-      "descripcion": "Guitarra Musicman signature John Petrucci",
-      "imagen": "https://s3-us-west-2.amazonaws.com/static.music-man.com/website/images/instruments/instrument-77.png?1631591609"
-    },
+      "descripcion": "Guitarra Musicman signature Steve Morse",
+      "imagen": "https://s3-us-west-2.amazonaws.com/static.music-man.com/website/images/instruments/instrument-18.png?1614365541"
+    }
+    ,
     {
       "precio": 580000,
       "id": 5,
-      "titulo": "MUSICMAN Majesty",
-      "categoria": "Musicman",
-      "descripcion": "Guitarra Musicman signature John Petrucci",
-      "imagen": "https://s3-us-west-2.amazonaws.com/static.music-man.com/website/images/instruments/instrument-77.png?1631591609"
+      "titulo": "Ibanez PIA3761",
+      "categoria": "Ibanez",
+      "descripcion": "Guitarra Musicman signature Steve Vai",
+      "imagen": "https://vanzguitars.files.wordpress.com/2021/01/00-2.jpg"
+    }
+    ,
+    {
+      "precio": 580000,
+      "id": 6,
+      "titulo": "Ibanez Jem 7V",
+      "categoria": "Ibanez",
+      "descripcion": "Guitarra Musicman signature Steve Vai",
+      "imagen": "https://i.ebayimg.com/images/g/9-EAAOSwydZb-uXl/s-l1600.jpg"
+    }
+    ,
+    {
+      "precio": 580000,
+      "id": 7,
+      "titulo": "Ibanez PGM",
+      "categoria": "Ibanez",
+      "descripcion": "Guitarra Musicman signature Paul Gilbert",
+      "imagen": "https://w7.pngwing.com/pngs/347/70/png-transparent-ibanez-pgm-electric-guitar-ibanez-rgat62-guitar-guitar-accessory-string-instrument-acoustic-electric-guitar.png"
+    }
+    ,
+    {
+      "precio": 580000,
+      "id": 8,
+      "titulo": "Ibanez J Custom",
+      "categoria": "Ibanez",
+      "descripcion": "Guitarra Musicman signature J Custom",
+      "imagen": "https://www.ibanez.com/common/product_artist_file/file/ps_main_eg_rg_jcustom_us.png"
     }
 ]

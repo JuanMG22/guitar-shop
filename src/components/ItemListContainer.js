@@ -19,7 +19,7 @@ const ItemListContainer = (props) => {
             })
             setLoading(false);
       }, 300);
-}, [])
+}, [id])
 
 
     if (loading) {
