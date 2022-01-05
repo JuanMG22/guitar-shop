@@ -1,13 +1,12 @@
 import ItemCount from "./ItemCount";
 
 
-const Item = ({producto}) => {
+const Item = ({ titulo, precio, pictureUrl, categoria }) => {
   
-  const { titulo, precio, pictureUrl, categoria, id } = producto
-
   const onAdd = () => {}
   return (
     <>
+    <h2 className="text-3xl font-sans text-black text-center mt-5">Detalle de producto</h2>
     <div className="container p-5 mx-auto">
       <div className="lg:w-4/5 mx-auto flex flex-wrap">
         <img alt="ecommerce" className="lg:w-1/2 w-full object-contain object-center rounded border border-gray-200" src={pictureUrl} />

@@ -17,7 +17,7 @@ const ItemDetailContainer = () => {
                 setData(json);
             })
             setLoading(false);
-      }, 800);
+      }, 300);
 }, [])
 
   if (loading) {
@@ -34,8 +34,7 @@ const ItemDetailContainer = () => {
   } else {
     return (
       <>
-      <h2 className="text-3xl font-sans text-black text-center mt-5">Detalle de producto</h2>
-            <ItemDetail producto={data}/>
+        <ItemDetail producto={data}/>
       </>
     );
   }
