@@ -29,7 +29,7 @@
     {
       "precio": 580000,
       "id": 4,
-      "titulo": "MUSICMAN Steve Mourse",
+      "titulo": "MUSICMAN SM",
       "categoria": "Musicman",
       "descripcion": "Guitarra Musicman signature Steve Morse",
       "imagen": "https://s3-us-west-2.amazonaws.com/static.music-man.com/website/images/instruments/instrument-18.png?1614365541"
@@ -59,12 +59,30 @@
       "titulo": "Ibanez PGM",
       "categoria": "Ibanez",
       "descripcion": "Guitarra Musicman signature Paul Gilbert",
-      "imagen": "https://w7.pngwing.com/pngs/347/70/png-transparent-ibanez-pgm-electric-guitar-ibanez-rgat62-guitar-guitar-accessory-string-instrument-acoustic-electric-guitar.png"
+      "imagen": "https://www.ibanez.com/common/product_artist_file/file/p_region_PGMM31_WH_2Y_02_en_1.png"
     }
     ,
     {
       "precio": 580000,
       "id": 8,
+      "titulo": "Ibanez J Custom",
+      "categoria": "Ibanez",
+      "descripcion": "Guitarra Musicman signature J Custom",
+      "imagen": "https://www.ibanez.com/common/product_artist_file/file/ps_main_eg_rg_jcustom_us.png"
+    }
+    ,
+    {
+      "precio": 580000,
+      "id": 9,
+      "titulo": "Ibanez J Custom",
+      "categoria": "Ibanez",
+      "descripcion": "Guitarra Musicman signature J Custom",
+      "imagen": "https://www.ibanez.com/common/product_artist_file/file/ps_main_eg_rg_jcustom_us.png"
+    }
+    ,
+    {
+      "precio": 580000,
+      "id": 10,
       "titulo": "Ibanez J Custom",
       "categoria": "Ibanez",
       "descripcion": "Guitarra Musicman signature J Custom",
