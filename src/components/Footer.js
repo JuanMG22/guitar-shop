@@ -27,7 +27,6 @@ const footer = () => {
                     <div className="-mx-4">
                       <Link to="/" className="px-4 text-sm">Inicio</Link>
                       <Link to="/" className="px-4 text-sm">Productos</Link>
-                      <Link to="/acerca" className="px-4 text-sm">Acerca de</Link>
                   	</div>
                 </div>
             </div>

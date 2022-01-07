@@ -15,10 +15,15 @@ const ItemListContainer = (props) => {
           fetch("https://juanmg22.github.io/guitar-shop/src/productos.json")
             .then((response) => response.json())
             .then((json) => {
+              if (!id) {
                 setData(json);
+              } else {
+                const filterCategoria = json.filter(e => e.categoria === id);
+                  setData(filterCategoria);
+              }
             })
             setLoading(false);
-      }, 300);
+      }, 150);
 }, [id])
 
 
@@ -28,7 +33,7 @@ const ItemListContainer = (props) => {
         <div className="flex justify-center align-center">
           <img
             src="http://soldadoresymotores.com/site/images/loader.gif"
-            alt=""
+            alt="loader"
           />
         </div>
       </>

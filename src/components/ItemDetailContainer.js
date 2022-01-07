@@ -1,24 +1,27 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail"
 
 const ItemDetailContainer = () => {
 
 
-
-
-  const [data, setData] = useState({});
+  const [producto, setProducto] = useState({});
   const [loading, setLoading] = useState(true);
+  const { id } = useParams()
 
   useEffect(() => {
       setTimeout(() => {
           fetch("https://juanmg22.github.io/guitar-shop/src/productos.json")
             .then((response) => response.json())
             .then((json) => {
-                setData(json);
+              const ProductoSeleccionado = json.find(e => e.id === parseInt(id))
+              setProducto(ProductoSeleccionado);
+                console.log(ProductoSeleccionado);
             })
             setLoading(false);
       }, 300);
-}, [])
+      
+}, [id])
 
   if (loading) {
     return (
@@ -33,9 +36,9 @@ const ItemDetailContainer = () => {
     );
   } else {
     return (
-      <>
-        <ItemDetail producto={data}/>
-      </>
+      <section className="min-h-[39.5rem]">
+        <ItemDetail producto={producto}/>
+      </section>
     );
   }
 }
