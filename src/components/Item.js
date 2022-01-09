@@ -20,7 +20,10 @@ const Item = ({ titulo, precio, pictureUrl, id }) => {
         />
         <div className="flex items-center justify-between px-4 py-2 bg-gray-900">
           <h1 className="text-gray-200 font-bold text-xl">$ {precio}</h1>
-          <Link to={"/item/"+id} className="px-3 py-1 bg-gray-800 text-sm text-gray-100 font-semibold rounded">
+          <Link
+            to={"/item/" + id}
+            className="px-3 py-1 bg-gray-800 text-sm text-gray-100 font-semibold rounded"
+          >
             Ver más
           </Link>
         </div>
