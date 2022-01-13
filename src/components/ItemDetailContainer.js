@@ -19,7 +19,7 @@ const ItemDetailContainer = () => {
           setProducto(ProductoSeleccionado);
         });
       setLoading(false);
-    }, 200);
+    }, 300);
   }, [id]);
 
   return <>{loading ? <Loader /> : <ItemDetail producto={producto} added={added} onAdd={onAdd} />}</>;

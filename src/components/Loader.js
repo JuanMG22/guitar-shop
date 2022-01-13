@@ -1,11 +1,8 @@
 const Loader = () => {
   return (
-    <div className="flex justify-center align-center">
-          <img
-            src="http://soldadoresymotores.com/site/images/loader.gif"
-            alt="loader"
-          />
-        </div>
+    <div className="flex justify-center items-center min-h-[40.8rem]">
+      <span className="loader"></span>
+    </div>
   );
 };
 
