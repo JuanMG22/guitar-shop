@@ -1,10 +1,14 @@
 import { FaShoppingCart } from "react-icons/fa";
+import { useContext } from "react";
+import { cartContext } from "../context/CartContext";
 
-const CartWidget = (props) => {
+const CartWidget = () => {
+
+    const { cartQuantity } = useContext(cartContext)
     return (
         <div>
             <p className="flex text-xl text-white p-2">
-                {props.cantidad} <FaShoppingCart />
+                {cartQuantity() > 0 && cartQuantity()} <FaShoppingCart />
             </p>
         </div>
     )

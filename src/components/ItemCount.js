@@ -26,7 +26,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         +
       </button>
       <button
-        onClick={onAdd}
+        onClick={() => onAdd(contador)}
         className="px-3 py-1 mx-5 bg-gray-800 text-sm text-gray-100 font-semibold rounded"
       >
         Agregar al Carrito
