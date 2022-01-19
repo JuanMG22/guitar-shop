@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 const CartItem = ( { titulo, precio, pictureUrl, categoria, quantity, id, deleteItem } ) => {
 
-  const precioTotal = precio * quantity
+  const precioTotalProducto = precio * quantity
     return (
       <>
         <div className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
@@ -46,7 +46,7 @@ const CartItem = ( { titulo, precio, pictureUrl, categoria, quantity, id, delete
              $ {precio}
             </span>
             <span className="text-center w-1/5 font-semibold text-sm">
-             $ {precioTotal}
+             $ {precioTotalProducto}
             </span>
           </div>
       </>
