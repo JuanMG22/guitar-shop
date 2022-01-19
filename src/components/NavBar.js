@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const links = [
-    { id: 1, link: "Musicman" },
-    { id: 2, link: "Ibanez" },
+    { id: 1, link: "Guitarras" },
+    { id: 2, link: "Bajos" },
   ];
 
   return (

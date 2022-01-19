@@ -3,7 +3,7 @@
       "precio": 550000,
       "id": 1,
       "titulo": "MUSICMAN JP-6",
-      "categoria": "Musicman",
+      "categoria": "Guitarras",
       "descripcion": "Guitarra Musicman signature John Petrucci",
       "imagen": "https://s3-us-west-2.amazonaws.com/static.music-man.com/website/images/instruments/instrument-7.png?1631591626"
     }
@@ -12,7 +12,7 @@
       "precio": 580000,
       "id": 2,
       "titulo": "MUSICMAN Majesty",
-      "categoria": "Musicman",
+      "categoria": "Guitarras",
       "descripcion": "Guitarra Musicman signature John Petrucci",
       "imagen": "https://s3-us-west-2.amazonaws.com/static.music-man.com/website/images/instruments/instrument-77.png?1631591609"
     }
@@ -21,7 +21,7 @@
       "precio": 580000,
       "id": 3,
       "titulo": "MUSICMAN Axis",
-      "categoria": "Musicman",
+      "categoria": "Guitarras",
       "descripcion": "Guitarra Musicman Axis",
       "imagen": "https://s3-us-west-2.amazonaws.com/static.music-man.com/website/images/instruments/instrument-3.png?1626125525"
     }
@@ -30,7 +30,7 @@
       "precio": 580000,
       "id": 4,
       "titulo": "MUSICMAN SM",
-      "categoria": "Musicman",
+      "categoria": "Guitarras",
       "descripcion": "Guitarra Musicman signature Steve Morse",
       "imagen": "https://s3-us-west-2.amazonaws.com/static.music-man.com/website/images/instruments/instrument-18.png?1614365541"
     }
@@ -39,7 +39,7 @@
       "precio": 580000,
       "id": 5,
       "titulo": "Ibanez PIA3761",
-      "categoria": "Ibanez",
+      "categoria": "Guitarras",
       "descripcion": "Guitarra Musicman signature Steve Vai",
       "imagen": "https://vanzguitars.files.wordpress.com/2021/01/00-2.jpg"
     }
@@ -48,7 +48,7 @@
       "precio": 580000,
       "id": 6,
       "titulo": "Ibanez Jem 7V",
-      "categoria": "Ibanez",
+      "categoria": "Guitarras",
       "descripcion": "Guitarra Musicman signature Steve Vai",
       "imagen": "https://i.ebayimg.com/images/g/9-EAAOSwydZb-uXl/s-l1600.jpg"
     }
@@ -57,7 +57,7 @@
       "precio": 580000,
       "id": 7,
       "titulo": "Ibanez PGM",
-      "categoria": "Ibanez",
+      "categoria": "Guitarras",
       "descripcion": "Guitarra Musicman signature Paul Gilbert",
       "imagen": "https://img.kytary.com/eshop_es/velky_v2/na/637516579191770000/26f5a272/64835684/ibanez-pgmm11-jb.jpg"
     }
@@ -66,7 +66,7 @@
       "precio": 580000,
       "id": 8,
       "titulo": "Ibanez J Custom",
-      "categoria": "Ibanez",
+      "categoria": "Guitarras",
       "descripcion": "Guitarra Musicman signature J Custom",
       "imagen": "https://www.ibanez.com/common/product_artist_file/file/ps_main_eg_rg_jcustom_us.png"
     }
@@ -75,7 +75,7 @@
       "precio": 580000,
       "id": 9,
       "titulo": "Ibanez J Custom",
-      "categoria": "Ibanez",
+      "categoria": "Bajos",
       "descripcion": "Guitarra Musicman signature J Custom",
       "imagen": "https://www.ibanez.com/common/product_artist_file/file/ps_main_eg_rg_jcustom_us.png"
     }
@@ -84,7 +84,7 @@
       "precio": 580000,
       "id": 10,
       "titulo": "Ibanez J Custom",
-      "categoria": "Ibanez",
+      "categoria": "Bajos",
       "descripcion": "Guitarra Musicman signature J Custom",
       "imagen": "https://www.ibanez.com/common/product_artist_file/file/ps_main_eg_rg_jcustom_us.png"
     }
