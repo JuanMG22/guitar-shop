@@ -1,6 +1,8 @@
+import { collection, getDocs } from "firebase/firestore";
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { cartContext } from "../context/CartContext";
+import { db } from "../firebase/firebase";
 import ItemDetail from "./ItemDetail";
 import Loader from "./Loader";
 
@@ -17,15 +19,24 @@ const ItemDetailContainer = () => {
     setAdded(true);
   };
   useEffect(() => {
-    setTimeout(() => {
-      fetch("https://juanmg22.github.io/guitar-shop/src/productos.json")
-        .then((response) => response.json())
-        .then((json) => {
-          const ProductoSeleccionado = json.find((e) => e.id === parseInt(id));
-          setProducto(ProductoSeleccionado);
+
+      const coleccionProductos = collection(db, "productos");
+      const pedido = getDocs(coleccionProductos);
+      pedido
+      .then((resultado) => {
+        const docs = resultado.docs;
+        const docs_formateado = docs.map((doc) => {
+          const producto = {
+            id: doc.id,
+            ...doc.data(),
+          };
+          return producto;
         });
-      setLoading(false);
-    }, 300);
+        const ProductoSeleccionado = docs_formateado.find((e) => e.id === id);
+        setProducto(ProductoSeleccionado);
+      })
+      .finally(() => setLoading(false));
+
   }, [id]);
 
   return (

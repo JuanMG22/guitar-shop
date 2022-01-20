@@ -16,7 +16,7 @@ const CartProvider = ({ children }) => {
     } else {
       const newObj = {
         item,
-        quantity,
+        quantity
       };
       setCartList([...cartList, newObj]);
     }

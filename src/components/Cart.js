@@ -7,6 +7,7 @@ import { FaTrash } from "react-icons/fa";
 
 const Cart = () => {
   const { cartQuantity, cartList, deleteItem, clearCart, totalPrice } = useContext(cartContext);
+  console.log(cartList)
   return (
     <>
       {cartQuantity() === 0 ? (

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import Loader from "./Loader";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase/firebase";
 
 const ItemListContainer = (props) => {
   const [data, setData] = useState([]);
@@ -9,16 +11,27 @@ const ItemListContainer = (props) => {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch("https://juanmg22.github.io/guitar-shop/src/productos.json")
-      .then((response) => response.json())
-      .then((json) => {
-        if (!id) {
-          setData(json);
-        } else {
-          const filterCategoria = json.filter((e) => e.categoria === id);
-          setData(filterCategoria);
-        }
-      })
+
+    const coleccionProductos = collection(db, "productos")
+    const pedido = getDocs(coleccionProductos)
+
+    pedido
+            .then((resultado)=>{
+                const docs = resultado.docs
+                const docs_formateado = docs.map(doc=>{
+                    const producto = {
+                        id : doc.id,
+                        ...doc.data()
+                    }
+                    return producto
+                })
+                if (!id) {
+                  setData(docs_formateado)
+                } else {
+                  const filterCategoria = docs_formateado.filter((e) => e.categoria === id);
+                  setData(filterCategoria);
+                }
+            })
       .finally(() => setLoading(false));
   }, [id]);
 
