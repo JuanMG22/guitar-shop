@@ -7,7 +7,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   const sumarContador = () => setContador(contador + 1);
   const stockContador = () => setContador(stock);
 
-  const botonResta = contador > 1 ? restarContador : false;
+  const botonResta = contador > 1 ? restarContador : undefined;
   const botonSuma = contador < stock ? sumarContador : stockContador;
 
   return (
