@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import Loader from "./Loader";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 
 const ItemListContainer = (props) => {
@@ -11,33 +11,28 @@ const ItemListContainer = (props) => {
   const { id } = useParams();
 
   useEffect(() => {
+    const coleccionProductos = collection(db, "productos");
+    let pedido;
 
-    const coleccionProductos = collection(db, "productos")
-    const pedido = getDocs(coleccionProductos)
-
+    if (id) {
+      const filtro1 = where("categoria", "==", id);
+      const consulta = query(coleccionProductos, filtro1);
+      pedido = getDocs(consulta);
+    } else {
+      pedido = getDocs(coleccionProductos);
+    }
     pedido
-            .then((resultado)=>{
-                const docs = resultado.docs
-                const docs_formateado = docs.map(doc=>{
-                    const producto = {
-                        id : doc.id,
-                        ...doc.data()
-                    }
-                    return producto
-                })
-                if (!id) {
-                  setData(docs_formateado)
-                } else {
-                  const filterCategoria = docs_formateado.filter((e) => e.categoria === id);
-                  setData(filterCategoria);
-                }
-            })
+      .then((resultado) => {
+        setData(resultado.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+      })
       .finally(() => setLoading(false));
   }, [id]);
 
   return (
     <>
-      {loading ? <Loader /> : (
+      {loading ? (
+        <Loader />
+      ) : (
         <>
           <h2 className="text-3xl font-sans text-black text-center mt-4 h-100">
             {props.greeting}

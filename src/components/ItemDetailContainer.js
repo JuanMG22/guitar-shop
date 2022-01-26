@@ -1,10 +1,12 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, doc, getDoc } from "firebase/firestore";
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { cartContext } from "../context/CartContext";
 import { db } from "../firebase/firebase";
 import ItemDetail from "./ItemDetail";
 import Loader from "./Loader";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 const ItemDetailContainer = () => {
   const [producto, setProducto] = useState({});
@@ -12,31 +14,35 @@ const ItemDetailContainer = () => {
   const [added, setAdded] = useState(false);
   const { id } = useParams();
 
-  const { addItem } = useContext(cartContext)
+  const { addItem } = useContext(cartContext);
+  const MySwal = withReactContent(Swal);
+
+  const mostrarToast = () => {
+    MySwal.fire({
+      toast: true,
+      position: "bottom-end",
+      icon: "success",
+      title: "Se agregó al carrito",
+      showConfirmButton: false,
+      timer: 3000,
+    });
+  };
 
   const onAdd = (count) => {
     addItem(producto, count);
     setAdded(true);
+    mostrarToast();
   };
   useEffect(() => {
-
-      const coleccionProductos = collection(db, "productos");
-      const pedido = getDocs(coleccionProductos);
-      pedido
+    const coleccionProductos = collection(db, "productos");
+    const docRef = doc(coleccionProductos, id);
+    const pedido = getDoc(docRef);
+    pedido
       .then((resultado) => {
-        const docs = resultado.docs;
-        const docs_formateado = docs.map((doc) => {
-          const producto = {
-            id: doc.id,
-            ...doc.data(),
-          };
-          return producto;
-        });
-        const ProductoSeleccionado = docs_formateado.find((e) => e.id === id);
-        setProducto(ProductoSeleccionado);
+        const producto = resultado.data();
+        setProducto({ ...producto, id });
       })
       .finally(() => setLoading(false));
-
   }, [id]);
 
   return (

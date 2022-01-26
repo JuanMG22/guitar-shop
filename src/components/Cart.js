@@ -1,13 +1,53 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { cartContext } from "../context/CartContext";
 import CartItem from "./CartItem";
 import EmptyCart from "./EmptyCart";
 import { FaTrash } from "react-icons/fa";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { db } from "../firebase/firebase";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 const Cart = () => {
-  const { cartQuantity, cartList, deleteItem, clearCart, totalPrice } = useContext(cartContext);
-  console.log(cartList)
+  const { cartQuantity, cartList, deleteItem, clearCart, totalPrice } =
+    useContext(cartContext);
+  const [orden, setOrden] = useState(false);
+
+  const MySwal = withReactContent(Swal);
+
+  const mostrarModalConfirmación = (nombre, id, email) => {
+    MySwal.fire({
+      title: `Gracias por comprar ${nombre}`,
+      html: `
+      <h3>Tu codigo de compra es: ${id}</h3>
+      <h3>En breve nos estaremos contactando a ${email}</h3>
+            `,
+      icon: "success",
+    });
+  };
+  const crearOrden = () => {
+    const coleccionProductos = collection(db, "ordenes");
+    const usuario = {
+      nombre: "Juan",
+      email: "juan@gmail.com",
+    };
+
+    const orden = {
+      usuario,
+      cartList,
+      total: totalPrice(),
+      fechaPedido: serverTimestamp(),
+    };
+
+    const pedido = addDoc(coleccionProductos, orden);
+
+    pedido.then((resultado) => {
+      setOrden(resultado.id);
+      mostrarModalConfirmación(usuario.nombre, resultado.id, usuario.email);
+      clearCart();
+    });
+  };
   return (
     <>
       {cartQuantity() === 0 ? (
@@ -111,7 +151,10 @@ const Cart = () => {
                 <span>$ {totalPrice()}</span>
               </div>
               <div className="border-t mt-8">
-                <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">
+                <button
+                  className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full"
+                  onClick={crearOrden}
+                >
                   Proceder con el pago
                 </button>
               </div>
