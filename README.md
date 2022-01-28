@@ -1,14 +1,25 @@
 #  Guitar Shop
 
-## E-commerce Project in React, using TailwindCSS, Sweet Alert2, useState, useEffect, ContextAPI, React Router Dom & more
+## E-commerce Project in React, using TailwindCSS, useState, useEffect, ContextAPI, Firebase & more
 
 
 
-### Demo: [Guitar Shop E-commerce](https://juanmg22.github.io/Marty-Friedman-Website/)
+### Demo: [Guitar Shop E-commerce](https://guitar-shop-react.netlify.app/)
 
 
 ### Home Section
 [![index.png](https://juangonzalez-devportfolio.netlify.app/static/media/project4.f71ed7fa.png)](https://postimg.cc/ZBY7fnbc)
+
+### Initialize Project
+#### To start this project, write the following lines in the terminal
+
+    git clone https://github.com/JuanMG22/guitar-shop.git
+
+    cd guitar-shop
+
+    npm install
+
+    npm start
 
 ### Author: Juan Manuel González
 
@@ -22,7 +33,7 @@
 | ---------------------------------------------------------------- | ------------------------- |
 | [React Router DOM V6](https://reactrouter.com/)                  | Router lib for React      |
 | [TailwindCSS](https://tailwindcss.com/)                          | CSS Framework             |
-| [Context API](https://es.reactjs.org/docs/context.html)          | Global state handler      |
+| [Sweet Alert2](https://sweetalert2.github.io/l)                  | Sweet Alert2              |
 | [React Icons](https://react-icons.github.io/react-icons/)        | React Icons Library       |
 
 
