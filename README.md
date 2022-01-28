@@ -10,6 +10,17 @@
 ### Home Section
 [![index.png](https://juangonzalez-devportfolio.netlify.app/static/media/project4.f71ed7fa.png)](https://postimg.cc/ZBY7fnbc)
 
+### Initialize Project
+#### To start this project, write the following lines in the terminal
+
+    git clone https://github.com/JuanMG22/guitar-shop.git
+
+    cd guitar-shop
+
+    npm install
+
+    npm start
+
 ### Author: Juan Manuel González
 
 - [Contact](mailto:Juan.m-gonzalez@outlook.com)
