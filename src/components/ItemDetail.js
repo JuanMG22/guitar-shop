@@ -1,7 +1,4 @@
-import { Link } from "react-router-dom";
-import ItemCount from "./ItemCount";
-
-const ItemDetail = ({ producto, onAdd, added }) => {
+const ItemDetail = ({ producto, isAdded }) => {
   return (
     <section className="min-h-[39.5rem]">
       <h2 className="text-3xl font-sans text-black text-center mt-5">
@@ -102,7 +99,7 @@ const ItemDetail = ({ producto, onAdd, added }) => {
               <span className="title-font font-medium text-2xl text-gray-900">
                 $ {producto.precio}
               </span>
-              {added ? <Link className="mx-5 px-3 py-1 bg-gray-800 text-sm text-gray-100 font-semibold rounded" to='/cart'>Ir al Carrito</Link> : <ItemCount stock={5} initial={1} onAdd={onAdd} /> }
+              {isAdded}
             </div>
           </div>
         </div>

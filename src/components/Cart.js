@@ -143,7 +143,7 @@ const Cart = () => {
                   className="p-2 text-sm w-full"
                 />
               </div>
-              <button className="bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase">
+              <button className="bg-gray-600 hover:bg-gray-500 px-5 py-2 text-sm text-white uppercase">
                 Aplicar
               </button>
               <div className="flex font-semibold justify-between py-6 text-sm uppercase">
@@ -152,7 +152,7 @@ const Cart = () => {
               </div>
               <div className="border-t mt-8">
                 <button
-                  className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full"
+                  className="bg-gray-800 font-semibold hover:bg-gray-700 py-3 text-sm text-white uppercase w-full transition-all"
                   onClick={crearOrden}
                 >
                   Proceder con el pago

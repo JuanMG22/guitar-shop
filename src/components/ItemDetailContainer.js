@@ -1,12 +1,13 @@
 import { collection, doc, getDoc } from "firebase/firestore";
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { cartContext } from "../context/CartContext";
 import { db } from "../firebase/firebase";
 import ItemDetail from "./ItemDetail";
 import Loader from "./Loader";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import ItemCount from "./ItemCount";
 
 const ItemDetailContainer = () => {
   const [producto, setProducto] = useState({});
@@ -33,6 +34,18 @@ const ItemDetailContainer = () => {
     setAdded(true);
     mostrarToast();
   };
+
+  const isAdded = added ? (
+    <Link
+      className="mx-5 px-3 py-1 bg-gray-800 text-sm text-gray-100 font-semibold"
+      to="/cart"
+    >
+      Ir al Carrito
+    </Link>
+  ) : (
+    <ItemCount stock={5} initial={1} onAdd={onAdd} />
+  );
+
   useEffect(() => {
     const coleccionProductos = collection(db, "productos");
     const docRef = doc(coleccionProductos, id);
@@ -50,7 +63,7 @@ const ItemDetailContainer = () => {
       {loading ? (
         <Loader />
       ) : (
-        <ItemDetail producto={producto} added={added} onAdd={onAdd} />
+        <ItemDetail producto={producto} isAdded={isAdded} />
       )}
     </>
   );

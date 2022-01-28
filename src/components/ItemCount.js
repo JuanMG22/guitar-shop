@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { FaMinus, FaPlus } from "react-icons/fa";
+
 
 const ItemCount = ({ stock, initial, onAdd }) => {
   const [contador, setContador] = useState(initial);
@@ -14,20 +16,20 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     <>
       <button
         onClick={botonResta}
-        className="mx-5 px-3 py-1 bg-gray-800 text-sm text-gray-100 font-semibold rounded"
+        className="mx-5 px-3 py-1 bg-gray-800 text-sm text-gray-100 font-semibold"
       >
-        -
+        <FaMinus />
       </button>
       <h3 className="text-3xl text-gray-800">{contador}</h3>
       <button
         onClick={botonSuma}
-        className="mx-5 px-3 py-1 bg-gray-800 text-sm text-gray-100 font-semibold rounded"
+        className="mx-5 px-3 py-1 bg-gray-800 text-sm text-gray-100 font-semibold"
       >
-        +
+        <FaPlus />
       </button>
       <button
         onClick={() => onAdd(contador)}
-        className="px-3 py-1 mx-5 bg-gray-800 text-sm text-gray-100 font-semibold rounded"
+        className="mx-5 px-3 py-1 bg-gray-800 text-sm text-gray-100 font-semibold"
       >
         Agregar al Carrito
       </button>

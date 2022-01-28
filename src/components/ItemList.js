@@ -3,7 +3,7 @@ import Item from "./Item";
 
 const ItemList = ({ productos }) => {
   return (
-    <section className="flex justify-evenly flex-wrap">
+    <section className="flex justify-center flex-wrap">
       {productos?.map((producto) => {
         return (
           <Item

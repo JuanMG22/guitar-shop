@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Item = ({ titulo, precio, pictureUrl, id }) => {
   return (
     <>
-      <article className="max-w-xs bg-white shadow-lg shadow-gray-500 border border-gray-300 my-10 ml-5 hover:shadow-lg hover:shadow-gray-900 hover:scale-105 transition-all">
+      <article className="max-w-xs bg-white shadow-lg shadow-gray-500 border border-gray-300 my-5 xl:ml-5 sm:my-10 sm:ml-0 hover:shadow-lg hover:shadow-gray-900 hover:scale-105 transition-all">
         <div className="px-4 py-2 text-left">
           <h1 className="text-gray-900 font-bold text-2xl uppercase">
             {titulo}
