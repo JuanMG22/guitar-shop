@@ -5,10 +5,10 @@ const CartItem = ( { titulo, precio, pictureUrl, categoria, quantity, id, delete
   const precioTotalProducto = precio * quantity
     return (
       <>
-        <div className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
-            <div className="flex w-2/5">
+        <div className="flex items-center hover:bg-gray-100 px-6 sm:px-0 py-5">
+            <div className="flex lg:w-2/5">
               <Link to={"/item/" + id}>
-              <div className="w-40">
+              <div className="lg:w-40 sm:w-24 w-20">
                 <img
                   className="h-100"
                   src={pictureUrl}
@@ -17,7 +17,7 @@ const CartItem = ( { titulo, precio, pictureUrl, categoria, quantity, id, delete
               </div>
               </Link>
               <div className="flex flex-col justify-between ml-4 flex-grow">
-                  <span className="font-bold text-sm">
+                  <span className="font-bold text-sm sm:text-xs">
                     <Link to={`/item/${id}`}>
                       {titulo}
                     </Link>
@@ -35,17 +35,17 @@ const CartItem = ( { titulo, precio, pictureUrl, categoria, quantity, id, delete
                 </button>
               </div>
             </div>
-            <div className="flex justify-center w-1/5">
+            <div className="flex justify-center w-1/5 ml-12 sm:ml-0">
               <input
                 className="mx-2 border text-center w-8"
                 type="text"
                 defaultValue={quantity}
               />
             </div>
-            <span className="text-center w-1/5 font-semibold text-sm">
+            <span className="text-center w-1/5 font-semibold text-sm hidden sm:block">
              $ {precio}
             </span>
-            <span className="text-center w-1/5 font-semibold text-sm">
+            <span className="text-center w-1/5 font-semibold text-sm ml-12 sm:ml-0">
              $ {precioTotalProducto}
             </span>
           </div>

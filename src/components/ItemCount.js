@@ -16,22 +16,22 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     <>
       <button
         onClick={botonResta}
-        className="mx-5 px-3 py-1 bg-gray-800 text-sm text-gray-100 font-semibold"
+        className="mx-5 px-3 py-1 bg-gray-800 text-xs sm:text-sm text-gray-100 font-semibold"
       >
         <FaMinus />
       </button>
-      <h3 className="text-3xl text-gray-800">{contador}</h3>
+      <h3 className="text-xl sm:text-3xl text-gray-800">{contador}</h3>
       <button
         onClick={botonSuma}
-        className="mx-5 px-3 py-1 bg-gray-800 text-sm text-gray-100 font-semibold"
+        className="mx-5 px-3 py-1 bg-gray-800 text-xs sm:text-sm text-gray-100 font-semibold"
       >
         <FaPlus />
       </button>
       <button
         onClick={() => onAdd(contador)}
-        className="mx-5 px-3 py-1 bg-gray-800 text-sm text-gray-100 font-semibold"
+        className="mx-5 px-3 py-1 bg-gray-800 text-xs sm:text-sm text-gray-100 font-semibold"
       >
-        Agregar al Carrito
+        Agregar
       </button>
     </>
   );

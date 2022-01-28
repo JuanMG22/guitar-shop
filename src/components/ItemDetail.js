@@ -95,8 +95,8 @@ const ItemDetail = ({ producto, isAdded }) => {
               pour-over, neutra jean shorts keytar banjo tattooed umami
               cardigan.
             </p>
-            <div className="flex my-5">
-              <span className="title-font font-medium text-2xl text-gray-900">
+            <div className="flex lg:flex-nowrap sm:flex-wrap my-5">
+              <span className="title-font font-medium text-xl sm:2xl text-gray-900">
                 $ {producto.precio}
               </span>
               {isAdded}

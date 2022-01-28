@@ -8,10 +8,10 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import CartForm from "./CartForm";
 
 const Cart = () => {
-  const { cartQuantity, cartList, deleteItem, clearCart, totalPrice } =
-    useContext(cartContext);
+  const { cartQuantity, cartList, deleteItem, clearCart, totalPrice } = useContext(cartContext);
   const [orden, setOrden] = useState(false);
 
   const MySwal = withReactContent(Swal);
@@ -54,9 +54,9 @@ const Cart = () => {
         <EmptyCart />
       ) : (
         <section className="container mx-auto mt-10">
-          <div className="flex shadow-md my-10">
-            <div className="w-3/4 bg-white px-10 py-10">
-              <div className="flex justify-between border-b pb-8">
+          <div className="flex flex-wrap shadow-md my-10">
+            <div className="xl:w-3/4 w-full bg-white px-10 py-10">
+              <div className="flex justify-between border-b pb-8 ">
                 <h1 className="font-semibold text-2xl">Carrito de compras</h1>
                 <h2 className="font-semibold text-2xl">
                   {cartQuantity()} Productos
@@ -66,13 +66,13 @@ const Cart = () => {
                 <h3 className="font-semibold text-gray-600 text-xs uppercase w-2/5">
                   Productos
                 </h3>
-                <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">
+                <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 ml-12 sm:ml-0">
                   Cantidad
                 </h3>
-                <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">
+                <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 hidden sm:block">
                   Precio
                 </h3>
-                <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">
+                <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 ml-12 sm:ml-0">
                   Total
                 </h3>
               </div>
@@ -110,55 +110,11 @@ const Cart = () => {
                 Seguir Comprando
               </Link>
             </div>
-
-            <div className="w-1/4 px-8 py-10">
-              <h2 className="font-semibold text-2xl border-b pb-8">
-                Resumen del pedido
-              </h2>
-              <div className="flex justify-between mt-10 mb-5">
-                <span className="font-semibold text-sm uppercase">
-                  {cartQuantity()} Productos
-                </span>
-                <span className="font-semibold text-sm">$ {totalPrice()}</span>
-              </div>
-              <div>
-                <label className="font-medium inline-block mb-3 text-sm uppercase">
-                  Envio
-                </label>
-                <select className="block p-2 text-gray-600 w-full text-sm">
-                  <option>Envio standard - $ 5000</option>
-                </select>
-              </div>
-              <div className="py-10">
-                <label
-                  htmlFor="promo"
-                  className="font-semibold inline-block mb-3 text-sm uppercase"
-                >
-                  Codigo de descuento
-                </label>
-                <input
-                  type="text"
-                  id="promo"
-                  placeholder="Ingresa un codigo"
-                  className="p-2 text-sm w-full"
-                />
-              </div>
-              <button className="bg-gray-600 hover:bg-gray-500 px-5 py-2 text-sm text-white uppercase">
-                Aplicar
-              </button>
-              <div className="flex font-semibold justify-between py-6 text-sm uppercase">
-                <span>Precio Total</span>
-                <span>$ {totalPrice()}</span>
-              </div>
-              <div className="border-t mt-8">
-                <button
-                  className="bg-gray-800 font-semibold hover:bg-gray-700 py-3 text-sm text-white uppercase w-full transition-all"
-                  onClick={crearOrden}
-                >
-                  Proceder con el pago
-                </button>
-              </div>
-            </div>
+            <CartForm
+              cartQuantity={cartQuantity}
+              totalPrice={totalPrice}
+              crearOrden={crearOrden}
+            />
           </div>
         </section>
       )}
