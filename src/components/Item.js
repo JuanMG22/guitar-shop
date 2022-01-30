@@ -13,11 +13,13 @@ const Item = ({ titulo, precio, pictureUrl, id }) => {
             quidem sequi illum facere recusandae voluptatibus
           </p>
         </div>
-        <img
-          className="h-56 w-full object-contain mt-2"
-          src={pictureUrl}
-          alt="Guitar"
-        />
+        <Link to={"/item/" + id}>
+          <img
+            className="h-56 w-full object-contain mt-2 transition-all"
+            src={pictureUrl}
+            alt="Guitar"
+          />
+        </Link>
         <div className="flex items-center justify-between px-4 py-2 bg-gray-900">
           <h1 className="text-gray-200 font-bold text-xl">$ {precio}</h1>
           <Link
