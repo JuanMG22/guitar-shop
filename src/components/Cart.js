@@ -26,7 +26,7 @@ const Cart = () => {
       icon: "success",
     });
   };
-  const crearOrden = () => {
+  const crearOrden = (e) => {
     const coleccionProductos = collection(db, "ordenes");
     const usuario = {
       nombre: "Juan",
@@ -41,7 +41,7 @@ const Cart = () => {
     };
 
     const pedido = addDoc(coleccionProductos, orden);
-
+    e.preventDefault()
     pedido.then((resultado) => {
       setOrden(resultado.id);
       mostrarModalConfirmación(usuario.nombre, resultado.id, usuario.email);

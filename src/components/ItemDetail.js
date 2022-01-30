@@ -9,7 +9,7 @@ const ItemDetail = ({ producto, isAdded }) => {
       <div className="container p-5 mx-auto">
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
           <div className="lg:w-1/2 w-full h-1/2 mt-20 hover:opacity-80 object-contain object-center border border-gray-200 cursor-pointer transition-all">
-            <SRLWrapper className="object-center">
+            <SRLWrapper>
               <img
                 alt={producto.titulo}
                 src={producto.imagen}

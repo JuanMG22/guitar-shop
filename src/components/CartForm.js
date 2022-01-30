@@ -1,6 +1,6 @@
 const CartForm = ({ crearOrden, cartQuantity, totalPrice }) => {
   return (
-    <form className="lg:w-full xl:w-1/4 w-full px-8 py-10">
+    <form className="lg:w-full xl:w-1/4 w-full px-8 py-10" onSubmit={crearOrden}>
       <h2 className="font-semibold text-2xl border-b pb-8">
         Resumen del pedido
       </h2>
@@ -37,8 +37,8 @@ const CartForm = ({ crearOrden, cartQuantity, totalPrice }) => {
       </div>
       <div className="border-t mt-8">
         <button
+          type="submit"
           className="bg-gray-800 font-semibold hover:bg-gray-700 py-3 text-sm text-white uppercase w-full transition-all"
-          onSubmit={crearOrden}
         >
           Proceder con el pago
         </button>
