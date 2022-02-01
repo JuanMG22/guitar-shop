@@ -10,9 +10,10 @@ const NavBar = () => {
     { id: 3, text: "Bajos", link: "/categoria/Bajos" },
   ];
 
-  const [openMenu, setOpenMenu] = useState(false)
-  const openCloseMenu = () => setOpenMenu(!openMenu)
-  const isOpenMenu = openMenu ? '' : 'hidden'
+  const [openMenu, setOpenMenu] = useState(false);
+  const openCloseMenu = () => setOpenMenu(!openMenu);
+  const closeMenu = () => setOpenMenu(false);
+  const isOpenMenu = openMenu ? "" : "hidden";
 
   return (
     <nav className="bg-gray-800">
@@ -23,11 +24,20 @@ const NavBar = () => {
               onClick={openCloseMenu}
               type="button"
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-            >{openMenu ? <FaTimes className="text-2xl" /> : <FaBars className="text-2xl" /> }</button>
+            >
+              {openMenu ? (
+                <FaTimes className="text-2xl" />
+              ) : (
+                <FaBars className="text-2xl" />
+              )}
+            </button>
           </div>
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <Link to="/">
-              <div className="flex-shrink-0 flex items-center">
+              <div
+                className="flex-shrink-0 flex items-center"
+                onClick={closeMenu}
+              >
                 <img
                   className="w-10"
                   src="https://www.nicepng.com/png/full/89-897917_bass-guitar-bass-guitar-logo-png.png"
@@ -52,7 +62,7 @@ const NavBar = () => {
               </div>
             </div>
           </div>
-          <Link to="/cart">
+          <Link to="/cart" onClick={closeMenu}>
             <CartWidget />
           </Link>
         </div>

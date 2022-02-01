@@ -7,8 +7,11 @@ const CartWidget = () => {
     const { cartQuantity } = useContext(cartContext)
     return (
         <div>
-            <p className="flex text-xl text-white p-2">
-                {cartQuantity() > 0 && cartQuantity()} <FaShoppingCart />
+            <p className="flex text-xl text-white p-2 items-center">
+                <span className="mr-1">
+                    {cartQuantity() > 0 ? cartQuantity() : 0}
+                </span>
+                 <FaShoppingCart />
             </p>
         </div>
     )

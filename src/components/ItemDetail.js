@@ -10,25 +10,7 @@ const ItemDetail = ({ producto, isAdded }) => {
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
           <div className="lg:w-1/2 w-full h-1/2 mt-20 hover:opacity-80 object-contain object-center border border-gray-200 cursor-pointer transition-all">
             <SRLWrapper>
-              <img
-                alt={producto.titulo}
-                src={producto.imagen}
-              />
-              <img
-                alt={producto.titulo}
-                className="hidden"
-                src={producto.imagen2}
-              />
-              <img
-                alt={producto.titulo}
-                className="hidden"
-                src={producto.imagen3}
-              />
-              <img
-                alt={producto.titulo}
-                className="hidden"
-                src={producto.imagen4}
-              />
+              <img alt={producto.titulo} src={producto.imagen} />
             </SRLWrapper>
           </div>
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
@@ -108,12 +90,7 @@ const ItemDetail = ({ producto, isAdded }) => {
               </span>
             </div>
             <p className="leading-relaxed">
-              Fam locavore kickstarter distillery. Mixtape chillwave tumeric
-              sriracha taximy chia microdosing tilde DIY. XOXO fam indxgo
-              juiceramps cornhole raw denim forage brooklyn. Everyday carry +1
-              seitan poutine tumeric. Gastropub blue bottle austin listicle
-              pour-over, neutra jean shorts keytar banjo tattooed umami
-              cardigan.
+              {producto.descripcion}
             </p>
             <div className="flex lg:flex-nowrap sm:flex-wrap my-5">
               <span className="title-font font-medium text-2xl sm:2xl text-gray-900">

@@ -12,11 +12,23 @@ import CartForm from "./CartForm";
 
 const Cart = () => {
   const { cartQuantity, cartList, deleteItem, clearCart, totalPrice } = useContext(cartContext);
-  const [orden, setOrden] = useState(false);
+  const [formData, setFormData] = useState({
+    nombre: "",
+    apellido: "",
+    email: "",
+    telefono: "",
+  });
 
-  const MySwal = withReactContent(Swal);
+  const handleInputChange = (e) => {
+    console.log(e.target.value);
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const mostrarModalConfirmación = (nombre, id, email) => {
+    const MySwal = withReactContent(Swal);
     MySwal.fire({
       title: `Gracias por comprar ${nombre}`,
       html: `
@@ -27,24 +39,20 @@ const Cart = () => {
     });
   };
   const crearOrden = (e) => {
+    e.preventDefault();
     const coleccionProductos = collection(db, "ordenes");
-    const usuario = {
-      nombre: "Juan",
-      email: "juan@gmail.com",
-    };
 
     const orden = {
-      usuario,
+      formData,
       cartList,
       total: totalPrice(),
       fechaPedido: serverTimestamp(),
     };
 
     const pedido = addDoc(coleccionProductos, orden);
-    e.preventDefault()
     pedido.then((resultado) => {
-      setOrden(resultado.id);
-      mostrarModalConfirmación(usuario.nombre, resultado.id, usuario.email);
+      setFormData(resultado.id);
+      mostrarModalConfirmación(formData.nombre, resultado.id, formData.email);
       clearCart();
     });
   };
@@ -113,6 +121,7 @@ const Cart = () => {
             <CartForm
               cartQuantity={cartQuantity}
               totalPrice={totalPrice}
+              handleInputChange={handleInputChange}
               crearOrden={crearOrden}
             />
           </div>

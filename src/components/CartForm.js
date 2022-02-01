@@ -1,6 +1,9 @@
-const CartForm = ({ crearOrden, cartQuantity, totalPrice }) => {
+const CartForm = ({  cartQuantity, totalPrice, handleInputChange, crearOrden }) => {
   return (
-    <form className="lg:w-full xl:w-1/4 w-full px-8 py-10" onSubmit={crearOrden}>
+    <form
+      className="lg:w-full xl:w-1/4 w-full px-8 py-10"
+      onSubmit={crearOrden}
+    >
       <h2 className="font-semibold text-2xl border-b pb-8">
         Resumen del pedido
       </h2>
@@ -11,25 +14,69 @@ const CartForm = ({ crearOrden, cartQuantity, totalPrice }) => {
         <span className="font-semibold text-sm">$ {totalPrice()}</span>
       </div>
       <div>
-        <label className="font-medium inline-block mb-3 text-sm uppercase" htmlFor="nombre">
+        <label
+          className="font-medium inline-block mb-3 text-sm uppercase"
+          htmlFor="nombre"
+        >
           Nombre
         </label>
-        <input type="text" placeholder="Ingresa tu nombre" id="nombre" className="block border border-gray-300 p-2 text-gray-600 w-full text-sm" required />
-        
-        <label className="font-medium inline-block mb-3 text-sm uppercase" htmlFor="apellido">
+        <input
+          type="text"
+          name="nombre"
+          placeholder="Ingresa tu nombre"
+          id="nombre"
+          className="block border border-gray-300 p-2 text-gray-600 w-full text-sm"
+          onChange={handleInputChange}
+          required
+        />
+
+        <label
+          className="font-medium inline-block mb-3 text-sm uppercase"
+          htmlFor="apellido"
+        >
           Apellido
         </label>
-        <input type="text" placeholder="Ingresa tu apellido" id="apellido" className="block border border-gray-300 p-2 text-gray-600 w-full text-sm" required />
-        
-        <label htmlFor="email" className="font-medium inline-block mb-3 text-sm uppercase">
+        <input
+          type="text"
+          name="apellido"
+          placeholder="Ingresa tu apellido"
+          id="apellido"
+          className="block border border-gray-300 p-2 text-gray-600 w-full text-sm"
+          onChange={handleInputChange}
+          required
+        />
+
+        <label
+          htmlFor="email"
+          className="font-medium inline-block mb-3 text-sm uppercase"
+        >
           Email
         </label>
-        <input type="mail" placeholder="Ingresa tu email" id="email" className="block border border-gray-300 p-2 text-gray-600 w-full text-sm" required />
-        
-        <label htmlFor="telefono" className="font-medium inline-block mb-3 text-sm uppercase">
+        <input
+          type="mail"
+          name="email"
+          placeholder="Ingresa tu email"
+          className="block border border-gray-300 p-2 text-gray-600 w-full text-sm"
+          onChange={handleInputChange}
+          required
+        />
+
+        <label
+          htmlFor="telefono"
+          className="font-medium inline-block mb-3 text-sm uppercase"
+        >
           Telefono
         </label>
-        <input type="number" placeholder="Ingresa tu telefono" id="telefono" className="block border border-gray-300 p-2 text-gray-600 w-full text-sm" min={0} maxLength={11} required />
+        <input
+          type="number"
+          name="telefono"
+          placeholder="Ingresa tu telefono"
+          className="block border border-gray-300 p-2 text-gray-600 w-full text-sm"
+          min={0}
+          maxLength={11}
+          onChange={handleInputChange}
+          required
+        />
       </div>
       <div className="flex font-semibold justify-between py-6 text-sm uppercase">
         <span>Precio Total</span>
