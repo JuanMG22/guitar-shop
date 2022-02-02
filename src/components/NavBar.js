@@ -8,6 +8,8 @@ const NavBar = () => {
     { id: 1, text: "Productos", link: "/" },
     { id: 2, text: "Guitarras", link: "/categoria/Guitarras" },
     { id: 3, text: "Bajos", link: "/categoria/Bajos" },
+    { id: 4, text: "Pedales", link: "/categoria/Pedales" },
+    { id: 5, text: "Amps", link: "/categoria/Amps" },
   ];
 
   const [openMenu, setOpenMenu] = useState(false);
@@ -35,7 +37,7 @@ const NavBar = () => {
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <Link to="/">
               <div
-                className="flex-shrink-0 flex items-center"
+                className="flex items-center"
                 onClick={closeMenu}
               >
                 <img
@@ -62,7 +64,7 @@ const NavBar = () => {
               </div>
             </div>
           </div>
-          <Link to="/cart" onClick={closeMenu}>
+          <Link to="/cart" onClick={closeMenu} className="px-1 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
             <CartWidget />
           </Link>
         </div>
