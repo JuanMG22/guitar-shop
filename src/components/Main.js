@@ -1,22 +1,21 @@
-import ItemListContainer from "./ItemListContainer";
-import ItemDetailContainer from "./ItemDetailContainer";
+import ItemListContainer from "./ItemList/ItemListContainer";
+import ItemDetailContainer from "./ItemDetail/ItemDetailContainer";
 import { Route, Routes } from "react-router-dom";
 import NotFound from "./NotFound";
-import Cart from "./Cart";
+import Cart from "./Cart/Cart";
 
 const Main = () => {
-    return (
-        <main className="min-h-[39.72rem]">
-            
-            <Routes>
-                <Route path="/" element={<ItemListContainer greeting="Bienvenido a Guitar Shop" />}/>
-                <Route path="/categoria/:id" element={<ItemListContainer greeting="Bienvenido a Guitar Shop"/>}/>
-                <Route path="/item/:id" element={<ItemDetailContainer/>}/>
-                <Route path="/cart" element={<Cart />}/>
-                <Route path="*" element={<NotFound />}/>
-            </Routes>
-        </main>
-    )
-}
+  return (
+    <main className="min-h-[39.5rem]">
+      <Routes>
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="/categoria/:id" element={<ItemListContainer />} />
+        <Route path="/item/:id" element={<ItemDetailContainer />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </main>
+  );
+};
 
 export default Main;

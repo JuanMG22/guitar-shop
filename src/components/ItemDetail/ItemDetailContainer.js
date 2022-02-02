@@ -1,13 +1,26 @@
 import { collection, doc, getDoc } from "firebase/firestore";
 import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { cartContext } from "../context/CartContext";
-import { db } from "../firebase/firebase";
+import { cartContext } from "../../context/CartContext";
+import { db } from "../../firebase/firebase";
 import ItemDetail from "./ItemDetail";
-import Loader from "./Loader";
+import Loader from "../Loader";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import ItemCount from "./ItemCount";
+
+const MySwal = withReactContent(Swal);
+const mostrarToast = () => {
+  MySwal.fire({
+    toast: true,
+    position: "bottom-end",
+    icon: "success",
+    iconColor: "#374151",
+    title: "Se agregó al carrito",
+    showConfirmButton: false,
+    timer: 3000,
+  });
+};
 
 const ItemDetailContainer = () => {
   const [producto, setProducto] = useState({});
@@ -16,18 +29,6 @@ const ItemDetailContainer = () => {
   const { id } = useParams();
 
   const { addItem } = useContext(cartContext);
-  const MySwal = withReactContent(Swal);
-
-  const mostrarToast = () => {
-    MySwal.fire({
-      toast: true,
-      position: "bottom-end",
-      icon: "success",
-      title: "Se agregó al carrito",
-      showConfirmButton: false,
-      timer: 3000,
-    });
-  };
 
   const onAdd = (count) => {
     addItem(producto, count);

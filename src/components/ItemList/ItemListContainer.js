@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
-import Loader from "./Loader";
+import Loader from "../Loader";
 import { collection, getDocs, query, where } from "firebase/firestore";
-import { db } from "../firebase/firebase";
+import { db } from "../../firebase/firebase";
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
@@ -34,9 +34,6 @@ const ItemListContainer = (props) => {
         <Loader />
       ) : (
         <>
-          <h2 className="text-3xl font-sans text-black text-center mt-4 h-100">
-            {props.greeting}
-          </h2>
           <h3 className="text-2xl font-sans text-black text-center mt-5">
             Lista de productos
           </h3>

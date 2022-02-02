@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useState } from "react";
 
-const NavBar = () => {
-  const links = [
-    { id: 1, text: "Productos", link: "/" },
-    { id: 2, text: "Guitarras", link: "/categoria/Guitarras" },
-    { id: 3, text: "Bajos", link: "/categoria/Bajos" },
-    { id: 4, text: "Pedales", link: "/categoria/Pedales" },
-    { id: 5, text: "Amps", link: "/categoria/Amps" },
-  ];
+const links = [
+  { id: 1, text: "Productos", link: "/" },
+  { id: 2, text: "Guitarras", link: "/categoria/Guitarras" },
+  { id: 3, text: "Bajos", link: "/categoria/Bajos" },
+  { id: 4, text: "Pedales", link: "/categoria/Pedales" },
+  { id: 5, text: "Amps", link: "/categoria/Amps" },
+];
 
+const NavBar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const openCloseMenu = () => setOpenMenu(!openMenu);
   const closeMenu = () => setOpenMenu(false);
@@ -36,10 +36,7 @@ const NavBar = () => {
           </div>
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <Link to="/">
-              <div
-                className="flex items-center"
-                onClick={closeMenu}
-              >
+              <div className="flex items-center" onClick={closeMenu}>
                 <img
                   className="w-10"
                   src="https://www.nicepng.com/png/full/89-897917_bass-guitar-bass-guitar-logo-png.png"
@@ -64,7 +61,11 @@ const NavBar = () => {
               </div>
             </div>
           </div>
-          <Link to="/cart" onClick={closeMenu} className="px-1 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+          <Link
+            to="/cart"
+            onClick={closeMenu}
+            className="px-1 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none"
+          >
             <CartWidget />
           </Link>
         </div>

@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Item from "./Item";
 
 const ItemList = ({ productos }) => {

@@ -1,17 +1,18 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
-import { cartContext } from "../context/CartContext";
+import { Link, useNavigate } from "react-router-dom";
+import { cartContext } from "../../context/CartContext";
 import CartItem from "./CartItem";
 import EmptyCart from "./EmptyCart";
 import { FaTrash } from "react-icons/fa";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { db } from "../firebase/firebase";
+import { db } from "../../firebase/firebase";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import CartForm from "./CartForm";
 
 const Cart = () => {
-  const { cartQuantity, cartList, deleteItem, clearCart, totalPrice } = useContext(cartContext);
+  const { cartQuantity, cartList, deleteItem, clearCart, totalPrice } =
+    useContext(cartContext);
   const [formData, setFormData] = useState({
     nombre: "",
     apellido: "",
@@ -31,12 +32,18 @@ const Cart = () => {
     MySwal.fire({
       title: `Gracias por comprar ${nombre}`,
       html: `
-      <h3>Tu codigo de compra es: ${id}</h3>
-      <h3>En breve nos estaremos contactando a ${email}</h3>
-            `,
+        <h3>Tu codigo de compra es: ${id}</h3>
+        <h3>Hemos enviado un correo a ${email}</h3>
+      `,
       icon: "success",
+      iconColor: "#374151",
+      confirmButtonColor: "#374151",
     });
   };
+
+  const navigate = useNavigate();
+  const volverHome = () => navigate("/");
+
   const crearOrden = (e) => {
     e.preventDefault();
     const coleccionProductos = collection(db, "ordenes");
@@ -53,50 +60,54 @@ const Cart = () => {
       setFormData(resultado.id);
       mostrarModalConfirmación(formData.nombre, resultado.id, formData.email);
       clearCart();
+      volverHome();
     });
   };
+
   return (
     <>
       {cartQuantity() === 0 ? (
         <EmptyCart />
       ) : (
-        <section className="container mx-auto mt-10">
+        <section className="sm:container sm:mx-auto mt-10 w-full">
           <div className="flex flex-wrap shadow-md my-10">
-            <div className="xl:w-3/4 w-full bg-white px-10 py-10">
+            <div className="xl:w-3/4 w-full bg-white px-3 sm:px-10 py-10">
               <div className="flex justify-between border-b pb-8 ">
                 <h1 className="font-semibold text-2xl">Carrito de compras</h1>
                 <h2 className="font-semibold text-2xl">
                   {cartQuantity()} Productos
                 </h2>
               </div>
-              <div className="flex mt-10 mb-5">
+              <div className="flex mt-10 mb-5 overflow-auto">
                 <h3 className="font-semibold text-gray-600 text-xs uppercase w-2/5">
                   Productos
                 </h3>
                 <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 ml-12 sm:ml-0">
                   Cantidad
                 </h3>
-                <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 hidden sm:block">
+                <h3 className="font-semibold text-center text-gray-600 text-xs uppercase hidden w-1/5 sm:block">
                   Precio
                 </h3>
                 <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 ml-12 sm:ml-0">
                   Total
                 </h3>
               </div>
-              {cartList?.map((producto) => {
-                return (
-                  <CartItem
-                    key={producto.item.id}
-                    titulo={producto.item.titulo}
-                    categoria={producto.item.categoria}
-                    quantity={producto.quantity}
-                    precio={producto.item.precio}
-                    pictureUrl={producto.item.imagen}
-                    id={producto.item.id}
-                    deleteItem={deleteItem}
-                  />
-                );
-              })}
+              <div className="overflow-x-auto">
+                {cartList?.map((producto) => {
+                  return (
+                    <CartItem
+                      key={producto.item.id}
+                      titulo={producto.item.titulo}
+                      categoria={producto.item.categoria}
+                      quantity={producto.quantity}
+                      precio={producto.item.precio}
+                      pictureUrl={producto.item.imagen}
+                      id={producto.item.id}
+                      deleteItem={deleteItem}
+                    />
+                  );
+                })}
+              </div>
 
               <button
                 onClick={() => clearCart()}

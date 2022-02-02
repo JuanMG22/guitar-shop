@@ -3,7 +3,14 @@ import { createContext, useState } from "react";
 export const cartContext = createContext();
 
 const CartProvider = ({ children }) => {
-  const [cartList, setCartList] = useState([]);
+  let cartLocalStorage = JSON.parse(localStorage.getItem("cartLocal"));
+
+  
+  const [cartList, setCartList] = useState(
+    cartLocalStorage ? cartLocalStorage : []
+  );
+  
+  localStorage.setItem("cartLocal", JSON.stringify(cartList));
 
   const addItem = (item, quantity) => {
     if (isInCart(item.id)) {
@@ -16,7 +23,7 @@ const CartProvider = ({ children }) => {
     } else {
       const newObj = {
         item,
-        quantity
+        quantity,
       };
       setCartList([...cartList, newObj]);
     }
@@ -25,10 +32,6 @@ const CartProvider = ({ children }) => {
   const deleteItem = (id) => {
     const updatedCart = cartList.filter((element) => element.item.id !== id);
     setCartList(updatedCart);
-  };
-
-  const clearCart = () => {
-    setCartList([]);
   };
 
   const isInCart = (id) => {
@@ -48,6 +51,10 @@ const CartProvider = ({ children }) => {
       (accum, element) => accum + element.quantity * element.item.precio,
       0
     );
+  };
+
+  const clearCart = () => {
+    setCartList([]);
   };
 
   const valorDelContexto = {

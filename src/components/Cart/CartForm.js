@@ -1,4 +1,9 @@
-const CartForm = ({  cartQuantity, totalPrice, handleInputChange, crearOrden }) => {
+const CartForm = ({
+  cartQuantity,
+  totalPrice,
+  handleInputChange,
+  crearOrden,
+}) => {
   return (
     <form
       className="lg:w-full xl:w-1/4 w-full px-8 py-10"
@@ -85,7 +90,7 @@ const CartForm = ({  cartQuantity, totalPrice, handleInputChange, crearOrden }) 
       <div className="border-t mt-8">
         <button
           type="submit"
-          className="bg-gray-800 font-semibold hover:bg-gray-700 py-3 text-sm text-white uppercase w-full transition-all"
+          className="bg-gray-800 font-semibold hover:bg-gray-700 py-3 text-sm text-white uppercase w-full rounded-md transition-all"
         >
           Proceder con el pago
         </button>
