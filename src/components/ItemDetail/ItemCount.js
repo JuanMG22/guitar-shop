@@ -16,20 +16,20 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     <>
       <button
         onClick={botonResta}
-        className="mx-5 px-3 py-1 bg-gray-800 text-xs sm:text-sm text-gray-100 font-semibold"
+        className="mx-5 px-3 py-1 bg-gray-800 hover:bg-gray-700 text-xs sm:text-sm text-gray-100 font-semibold rounded-md"
       >
         <FaMinus />
       </button>
       <h3 className="text-xl sm:text-3xl text-gray-800">{contador}</h3>
       <button
         onClick={botonSuma}
-        className="mx-5 px-3 py-1 bg-gray-800 text-xs sm:text-sm text-gray-100 font-semibold"
+        className="mx-5 px-3 py-1 bg-gray-800 hover:bg-gray-700 text-xs sm:text-sm text-gray-100 font-semibold rounded-md"
       >
         <FaPlus />
       </button>
       <button
         onClick={() => onAdd(contador)}
-        className="mx-5 px-3 py-1 bg-gray-800 text-xs sm:text-sm text-gray-100 font-semibold"
+        className="ml-5 px-3 py-1 bg-gray-800 hover:bg-gray-700 text-xs sm:text-sm text-gray-100 font-semibold rounded-md"
       >
         Agregar
       </button>

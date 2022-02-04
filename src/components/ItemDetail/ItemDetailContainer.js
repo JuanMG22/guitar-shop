@@ -37,12 +37,20 @@ const ItemDetailContainer = () => {
   };
 
   const isAdded = added ? (
+    <>
     <Link
-      className="mx-5 px-3 py-1 bg-gray-800 text-sm text-gray-100 font-semibold"
+      className="ml-5 px-3 py-1 bg-gray-800 hover:bg-gray-700 text-sm text-gray-100 font-semibold rounded-md"
+      to="/"
+    >
+      Seguir Comprando
+    </Link>
+    <Link
+      className="ml-5 px-3 py-1 bg-gray-800 hover:bg-gray-700 text-sm text-gray-100 font-semibold rounded-md"
       to="/cart"
     >
       Ir al Carrito
     </Link>
+    </>
   ) : (
     <ItemCount stock={5} initial={1} onAdd={onAdd} />
   );

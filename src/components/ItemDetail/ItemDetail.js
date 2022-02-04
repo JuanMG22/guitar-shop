@@ -24,7 +24,7 @@ const ItemDetail = ({ producto, isAdded }) => {
               {producto.descripcion}
             </p>
             <div className="flex lg:flex-nowrap sm:flex-wrap my-5">
-              <span className="title-font font-medium text-2xl sm:2xl text-gray-900">
+              <span className="title-font font-medium text-2xl text-gray-900">
                 $ {producto.precio}
               </span>
               {isAdded}
