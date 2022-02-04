@@ -15,6 +15,11 @@ const ItemList = ({ productos }) => {
           />
         );
       })}
+      {productos && productos.length === 0 && (
+        <h3 className="flex justify-center items-center mt-40 text-xl text-gray-800">
+          No se encontró ningún producto
+        </h3>
+      )}
     </section>
   );
 };
