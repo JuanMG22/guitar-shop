@@ -19,7 +19,8 @@ const ItemListContainer = () => {
   let filtroBusqueda =
     data && searchData
       ? data.filter((p) =>
-          p.titulo.toLowerCase().includes(searchData.toLowerCase())
+          p.titulo.toLowerCase().includes(searchData.toLowerCase()) ||
+          p.categoria.toLowerCase().includes(searchData.toLowerCase())
         )
       : data;
 

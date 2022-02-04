@@ -21,7 +21,8 @@ const NavBar = () => {
     <nav className="bg-gray-800">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          <div className="flex-1 flex items-center justify-between px-1 sm:px-0">
+            <div className="inset-y-0 left-0 flex items-center sm:hidden">
             <button
               onClick={openCloseMenu}
               type="button"
@@ -34,15 +35,16 @@ const NavBar = () => {
               )}
             </button>
           </div>
-          <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+          <div className="flex">
+
             <Link to="/">
-              <div className="flex items-center" onClick={closeMenu}>
+              <div className="flex items-center justify-center sm:justify-between" onClick={closeMenu}>
                 <img
                   className="w-10"
                   src="https://www.nicepng.com/png/full/89-897917_bass-guitar-bass-guitar-logo-png.png"
                   alt="guitar shop logo"
                 />
-                <h1 className="font-sans text-white ml-4">GUITAR SHOP</h1>
+                <h1 className="text-white ml-2">GUITAR SHOP</h1>
               </div>
             </Link>
             <div className="hidden sm:block sm:ml-6">
@@ -68,6 +70,7 @@ const NavBar = () => {
           >
             <CartWidget />
           </Link>
+          </div>
         </div>
       </div>
 
