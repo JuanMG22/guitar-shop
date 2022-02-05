@@ -16,7 +16,7 @@ const CartForm = ({
         <span className="font-semibold text-sm uppercase">
           {cartQuantity()} Productos
         </span>
-        <span className="font-semibold text-sm">$ {totalPrice()}</span>
+        <span className="font-semibold text-sm">$ {totalPrice().toLocaleString('es-AR')}</span>
       </div>
       <div>
         <label
@@ -85,7 +85,7 @@ const CartForm = ({
       </div>
       <div className="flex font-semibold justify-between py-6 text-sm uppercase">
         <span>Precio Total</span>
-        <span>$ {totalPrice()}</span>
+        <span>$ {totalPrice().toLocaleString('es-AR')}</span>
       </div>
       <div className="border-t mt-8">
         <button

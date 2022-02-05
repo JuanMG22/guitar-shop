@@ -25,7 +25,7 @@ const ItemDetail = ({ producto, isAdded }) => {
             </p>
             <div className="flex lg:flex-nowrap sm:flex-wrap my-5">
               <span className="title-font font-medium text-2xl text-gray-900">
-                $ {producto.precio}
+                $ {producto.precio.toLocaleString('es-AR')}
               </span>
               {isAdded}
             </div>

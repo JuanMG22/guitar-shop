@@ -41,10 +41,10 @@ const CartItem = ({
         />
       </div>
       <span className="text-center w-1/5 font-semibold text-xs sm:text-sm hidden sm:block">
-        $ {precio}
+        $ {precio.toLocaleString('es-AR')}
       </span>
       <span className="text-center w-1/5 font-semibold text-xs sm:text-sm ml-10 sm:ml-0">
-        $ {precioTotalProducto}
+        $ {precioTotalProducto.toLocaleString('es-AR')}
       </span>
     </div>
   );
