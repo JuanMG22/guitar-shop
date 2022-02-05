@@ -40,7 +40,7 @@ const ItemDetailContainer = () => {
     <>
     <Link
       className="ml-5 px-3 py-1 bg-gray-800 hover:bg-gray-700 text-sm text-gray-100 font-semibold rounded-md"
-      to="/"
+      to="/productos"
     >
       Seguir Comprando
     </Link>

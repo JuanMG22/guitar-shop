@@ -4,7 +4,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { useState } from "react";
 
 const links = [
-  { id: 1, text: "Productos", link: "/" },
+  { id: 1, text: "Productos", link: "/productos" },
   { id: 2, text: "Guitarras", link: "/categoria/Guitarras" },
   { id: 3, text: "Bajos", link: "/categoria/Bajos" },
   { id: 4, text: "Pedales", link: "/categoria/Pedales" },
