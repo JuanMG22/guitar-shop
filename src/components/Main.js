@@ -5,6 +5,7 @@ import NotFound from "./NotFound";
 import Cart from "./Cart/Cart";
 import Home from "./Home";
 import Contacto from "./Contacto";
+import Success from "./Success";
 
 const Main = () => {
   return (
@@ -14,6 +15,7 @@ const Main = () => {
         <Route path="/productos" element={<ItemListContainer />} />
         <Route path="/categoria/:id" element={<ItemListContainer />} />
         <Route path="/contacto" element={<Contacto />} />
+        <Route path="/success" element={<Success />} />
         <Route path="/item/:id" element={<ItemDetailContainer />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<NotFound />} />
