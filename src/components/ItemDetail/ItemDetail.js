@@ -1,6 +1,24 @@
 import { Link } from "react-router-dom";
 import { SRLWrapper } from "simple-react-lightbox";
 
+
+const options = {
+    settings: {
+      hideControlsAfter: 1500,
+      lightboxTransitionSpeed: 0.3,
+      lightboxTransitionTimingFunction: 'backOut',
+      slideAnimationType: 'slide',
+      slideTransitionSpeed: 0.3,
+      slideTransitionTimingFunction: 'backOut'
+    },
+    buttons: {
+      showAutoplayButton: false,
+      showDownloadButton: false,
+      showThumbnailsButton: false,
+      size: '45px'
+    }
+}
+
 const ItemDetail = ({ producto, isAdded }) => {
   return (
     <section className="min-h-[39.5rem]">
@@ -51,8 +69,8 @@ const ItemDetail = ({ producto, isAdded }) => {
         </div>
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
           <div className="lg:w-1/2 w-full h-1/2 mt-6 hover:opacity-80 object-contain object-center border border-gray-200 cursor-pointer transition-all">
-            <SRLWrapper>
-              <img alt={producto.titulo} src={producto.imagen} />
+            <SRLWrapper options={options} className="h-screen">
+              <img alt={producto.titulo} src={producto.imagen}  />
               <img alt={producto.titulo} src={producto.imagen2} className="hidden"/>
             </SRLWrapper>
           </div>

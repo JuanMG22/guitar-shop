@@ -30,7 +30,7 @@ const CartForm = ({
           name="nombre"
           placeholder="Ingresa tu nombre"
           id="nombre"
-          className="block border border-gray-300 p-2 text-gray-600 w-full text-sm"
+          className="block border border-gray-300 p-2 text-gray-600 bg-gray-50 w-full text-sm"
           onChange={handleInputChange}
           required
         />
@@ -46,7 +46,7 @@ const CartForm = ({
           name="apellido"
           placeholder="Ingresa tu apellido"
           id="apellido"
-          className="block border border-gray-300 p-2 text-gray-600 w-full text-sm"
+          className="block border border-gray-300 p-2 text-gray-600 bg-gray-50 w-full text-sm"
           onChange={handleInputChange}
           required
         />
@@ -60,8 +60,9 @@ const CartForm = ({
         <input
           type="mail"
           name="email"
+          id="email"
           placeholder="Ingresa tu email"
-          className="block border border-gray-300 p-2 text-gray-600 w-full text-sm"
+          className="block border border-gray-300 p-2 text-gray-600 bg-gray-50 w-full text-sm"
           onChange={handleInputChange}
           required
         />
@@ -73,10 +74,11 @@ const CartForm = ({
           Telefono
         </label>
         <input
-          type="number"
+          type="phone"
           name="telefono"
+          id="telefono"
           placeholder="Ingresa tu telefono"
-          className="block border border-gray-300 p-2 text-gray-600 w-full text-sm"
+          className="block border border-gray-300 p-2 text-gray-600 bg-gray-50 w-full text-sm"
           min={0}
           maxLength={11}
           onChange={handleInputChange}

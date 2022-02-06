@@ -9,6 +9,7 @@ const links = [
   { id: 3, text: "Bajos", link: "/categoria/Bajos" },
   { id: 4, text: "Pedales", link: "/categoria/Pedales" },
   { id: 5, text: "Amps", link: "/categoria/Amps" },
+  { id: 6, text: "Contacto", link: "/contacto" },
 ];
 
 const NavBar = () => {
