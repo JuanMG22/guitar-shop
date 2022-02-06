@@ -7,8 +7,8 @@
 ### Demo: [Guitar Shop E-commerce](https://guitar-shop-react.netlify.app/)
 
 
-### Home Section
-[![index.png](https://juangonzalez-devportfolio.netlify.app/static/media/project4.f71ed7fa.png)](https://postimg.cc/ZBY7fnbc)
+### App Usage
+<img src="https://i.ibb.co/v1yRkWt/DEMO.gif" alt="DEMO" border="0" />
 
 ### Initialize Project
 #### To start this project, write the following lines in the terminal
@@ -27,14 +27,15 @@
 - [Linkedin](https://www.linkedin.com/in/juan-manuel-gonz%C3%A1lez-041576218/)
 
 
-### Main libraries and API's used in the project
+### Main libraries used in this project
 
-| library/API's                                                    | used                      |
+| library/                                                         | used                      |
 | ---------------------------------------------------------------- | ------------------------- |
 | [React Router DOM V6](https://reactrouter.com/)                  | Router lib for React      |
 | [TailwindCSS](https://tailwindcss.com/)                          | CSS Framework             |
 | [Sweet Alert2](https://sweetalert2.github.io/l)                  | Sweet Alert2              |
 | [React Icons](https://react-icons.github.io/react-icons/)        | React Icons Library       |
+| [Simple React Lightbox](https://github.com/michelecocuccio/simple-react-lightbox)| Image Gallery lib |
 
 
 
