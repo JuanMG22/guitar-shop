@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 const Contacto = () => {
+  const navigate = useNavigate();
+  const goSuccess = () => navigate("/success");
   return (
     <section className="w-full">
       <div className="h-96 bg-bottom bg-cover bg-[url('https://www.teahub.io/photos/full/48-485738_-contact-us.jpg')]"></div>
@@ -7,7 +11,12 @@ const Contacto = () => {
           <p className="text-3xl font-bold leading-7 text-center">
             Contactanos
           </p>
-          <form name="contact-form" method="POST" data-netlify="true">
+          <form
+            name="contact-form"
+            method="POST"
+            data-netlify="true"
+            onSubmit={goSuccess}
+          >
             <div className="md:flex items-center mt-12">
               <div className="w-full md:w-1/2 flex flex-col">
                 <input type="hidden" name="form-name" value="contact-form" />
