@@ -8,7 +8,6 @@
 
 
 ### App Usage
-<img src="https://i.ibb.co/v1yRkWt/DEMO.gif" alt="DEMO" border="0" />
 
 ### Initialize Project
 #### To start this project, write the following lines in the terminal
