@@ -92,7 +92,7 @@ const CartForm = ({
       <div className="border-t mt-8">
         <button
           type="submit"
-          className="bg-gray-800 font-semibold hover:bg-gray-700 py-3 text-sm text-white uppercase w-full rounded-md transition-all"
+          className="bg-gray-800 font-semibold hover:bg-gray-700 py-3 text-sm text-white uppercase w-full focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none rounded-md transition-all"
         >
           Proceder con el pago
         </button>

@@ -22,7 +22,7 @@ const Item = ({ titulo, descripcion, precio, pictureUrl, id }) => {
         <h3 className="text-gray-200 font-bold text-xl">$ {precio.toLocaleString('es-AR')}</h3>
         <Link
           to={`/item/${id}`}
-          className="bg-gray-700 font-semibold hover:bg-gray-600 py-2 px-3 text-sm text-white rounded-md focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 focus:outline-none transition-all"
+          className="bg-gray-700 font-semibold hover:bg-gray-600 py-2 px-3 text-sm text-white rounded-md focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none transition-all"
         >
           Ver más
         </Link>

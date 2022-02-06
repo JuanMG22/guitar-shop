@@ -39,13 +39,13 @@ const ItemDetailContainer = () => {
   const isAdded = added ? (
     <>
     <Link
-      className="ml-5 px-3 py-1 bg-gray-800 hover:bg-gray-700 text-sm text-gray-100 font-semibold rounded-md"
+      className="ml-5 px-3 py-1 bg-gray-800 hover:bg-gray-700 text-sm text-gray-100 font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none rounded-md"
       to="/productos"
     >
       Seguir Comprando
     </Link>
     <Link
-      className="ml-5 px-3 py-1 bg-gray-800 hover:bg-gray-700 text-sm text-gray-100 font-semibold rounded-md"
+      className="ml-5 px-3 py-1 bg-gray-800 hover:bg-gray-700 text-sm text-gray-100 font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none rounded-md"
       to="/cart"
     >
       Ir al Carrito
