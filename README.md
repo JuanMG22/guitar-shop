@@ -17,7 +17,7 @@
 The contact form works using netlify forms
 ![demo contact](https://user-images.githubusercontent.com/88951217/152752108-d244578b-6da0-437f-8634-d37c5e8e4872.gif)
 
-
+---
 ### Initialize Project
 To start this project, you must clone or fork the repository
 
@@ -34,14 +34,9 @@ Already positioned in the cloned folder, you will need to install the dependenci
 Once the dependencies are installed, run the following command
 
     npm start
-
-### Author: Juan Manuel González
-
-- [Contact](mailto:Juan.m-gonzalez@outlook.com)
-- [Portfolio](https://juangonzalez-devportfolio.netlify.app/)
-- [Linkedin](https://www.linkedin.com/in/juan-manuel-gonz%C3%A1lez-041576218/)
-
-
+    
+    
+---
 ### Main libraries used in this project
 
 | library                                                          | used                      |
@@ -53,10 +48,18 @@ Once the dependencies are installed, run the following command
 | [Simple React Lightbox](https://github.com/michelecocuccio/simple-react-lightbox)| Image Gallery lib |
 
 
-
 ### Pending tasks
 
 - Create users auth
----
 
+
+### Author: Juan Manuel González
+
+- [Contact](mailto:Juan.m-gonzalez@outlook.com)
+- [Portfolio](https://juangonzalez-devportfolio.netlify.app/)
+- [Linkedin](https://www.linkedin.com/in/juan-manuel-gonz%C3%A1lez-041576218/)
+
+
+
+---
 This project was developed for the React Js course on the CoderHouse platform [![coderhouse](https://emprelatam.com/wp-content/uploads/2019/10/logos-coderhouse-01.png)](https://www.coderhouse.com/)
