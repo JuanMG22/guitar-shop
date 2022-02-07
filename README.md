@@ -13,9 +13,13 @@
 #### App in Mobile
 ![demo-mobile](https://user-images.githubusercontent.com/88951217/152746780-e6d36c63-1b54-4f8f-a053-1b343968253e.gif)
 
+### Contact Form
+The contact form works using netlify forms
+![demo contact](https://user-images.githubusercontent.com/88951217/152752108-d244578b-6da0-437f-8634-d37c5e8e4872.gif)
+
 
 ### Initialize Project
-#### To start this project, you must clone or fork the repository
+To start this project, you must clone or fork the repository
 
     git clone https://github.com/JuanMG22/guitar-shop.git
 
