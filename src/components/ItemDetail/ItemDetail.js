@@ -31,7 +31,7 @@ const ItemDetail = ({ producto, isAdded }) => {
             <li className="flex items-center">
               <Link to="/">Inicio</Link>
               <svg
-                className="fill-current w-3 h-3 mx-2"
+                className="fill-current w-3 h-3 mx-1"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 320 512"
               >
@@ -41,7 +41,7 @@ const ItemDetail = ({ producto, isAdded }) => {
             <li className="flex items-center">
               <Link to={`/productos`}>Productos</Link>
               <svg
-                className="fill-current w-3 h-3 mx-2"
+                className="fill-current w-3 h-3 mx-1"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 320 512"
               >
@@ -53,7 +53,7 @@ const ItemDetail = ({ producto, isAdded }) => {
                 {producto.categoria}
               </Link>
               <svg
-                className="fill-current w-3 h-3 mx-2"
+                className="fill-current w-3 h-3 mx-1"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 320 512"
               >
