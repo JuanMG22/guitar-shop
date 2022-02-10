@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { cartContext } from "../../context/CartContext";
 import CartItem from "./CartItem";
@@ -13,19 +13,8 @@ import CartForm from "./CartForm";
 const Cart = () => {
   const { cartQuantity, cartList, deleteItem, clearCart, totalPrice } =
     useContext(cartContext);
-  const [formData, setFormData] = useState({
-    nombre: "",
-    apellido: "",
-    email: "",
-    telefono: "",
-  });
 
-  const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const onSubmit = (datosComprador) => crearOrden(datosComprador);
 
   const mostrarModalConfirmación = (nombre, id, email) => {
     const MySwal = withReactContent(Swal);
@@ -44,21 +33,17 @@ const Cart = () => {
   const navigate = useNavigate();
   const volverHome = () => navigate("/");
 
-  const crearOrden = (e) => {
-    e.preventDefault();
+  const crearOrden = (datosComprador) => {
     const coleccionProductos = collection(db, "ordenes");
-
     const orden = {
-      formData,
+      datosComprador,
       cartList,
       total: totalPrice(),
       fechaPedido: serverTimestamp(),
     };
-
     const pedido = addDoc(coleccionProductos, orden);
     pedido.then((resultado) => {
-      setFormData(resultado.id);
-      mostrarModalConfirmación(formData.nombre, resultado.id, formData.email);
+      mostrarModalConfirmación(datosComprador.nombre, resultado.id, datosComprador.email);
       clearCart();
       volverHome();
     });
@@ -131,8 +116,7 @@ const Cart = () => {
             <CartForm
               cartQuantity={cartQuantity}
               totalPrice={totalPrice}
-              handleInputChange={handleInputChange}
-              crearOrden={crearOrden}
+              onSubmit={onSubmit}
             />
           </div>
         </section>
