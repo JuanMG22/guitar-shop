@@ -40,11 +40,11 @@ const CartForm = ({ cartQuantity, totalPrice, onSubmit }) => {
             required: {
               value: true,
               maxLength: 20,
-              message: "Ingrese un nombre",
+              message: "Ingrese un nombre"
             },
             pattern: {
               value: /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/i,
-              message: "Ingrese un nombre valido",
+              message: "Ingrese un nombre valido"
             },
           })}
         />
