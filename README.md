@@ -56,7 +56,7 @@ Once the dependencies are installed, run the following command
 ### Author: Juan Manuel González
 
 - [Contact](mailto:Juan.m-gonzalez@outlook.com)
-- [Portfolio](https://juangonzalez-devportfolio.netlify.app/)
+- [Portfolio](https://juangonzalez.netlify.app/)
 - [Linkedin](https://www.linkedin.com/in/juan-manuel-gonz%C3%A1lez-041576218/)
 
 
