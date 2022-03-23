@@ -9,6 +9,7 @@ import { db } from "../../firebase/firebase";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import CartForm from "./CartForm";
+import Helmet from "react-helmet";
 
 const Cart = () => {
   const { cartQuantity, cartList, deleteItem, clearCart, totalPrice } =
@@ -51,6 +52,9 @@ const Cart = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Guitar Shop - Carrito</title>
+      </Helmet>
       {cartQuantity() === 0 ? (
         <EmptyCart />
       ) : (

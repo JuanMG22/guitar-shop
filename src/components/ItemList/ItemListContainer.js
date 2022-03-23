@@ -5,6 +5,7 @@ import Loader from "../Loader";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
 import ItemSearch from "./ItemSearch";
+import Helmet from "react-helmet";
 
 const ItemListContainer = () => {
   const [data, setData] = useState([]);
@@ -42,12 +43,17 @@ const ItemListContainer = () => {
       .finally(() => setLoading(false));
   }, [id]);
 
+  const title = id ? id : 'Productos'
+
   return (
     <>
       {loading ? (
         <Loader />
       ) : (
         <>
+          <Helmet>
+            <title>{`Guitar Shop - ${title}`}</title>
+          </Helmet>
           <h3 className="text-2xl font-sans text-gray-60 text-center mt-5">
             Lista de productos
           </h3>

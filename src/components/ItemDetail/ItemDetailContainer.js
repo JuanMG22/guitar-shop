@@ -8,6 +8,7 @@ import Loader from "../Loader";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import ItemCount from "./ItemCount";
+import Helmet from "react-helmet";
 
 const MySwal = withReactContent(Swal);
 const mostrarToast = () => {
@@ -72,7 +73,12 @@ const ItemDetailContainer = () => {
       {loading ? (
         <Loader />
       ) : (
-        <ItemDetail producto={producto} isAdded={isAdded} />
+        <>
+          <Helmet>
+            <title>{`Guitar Shop - ${producto.titulo}`}</title>
+          </Helmet>
+          <ItemDetail producto={producto} isAdded={isAdded} />
+        </>
       )}
     </>
   );
