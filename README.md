@@ -42,6 +42,8 @@ Once the dependencies are installed, run the following command
 | library                                                          | used                      |
 | ---------------------------------------------------------------- | ------------------------- |
 | [React Router DOM V6](https://reactrouter.com/)                  | Router lib for React      |
+| [React Hook Form](https://react-hook-form.com/)                  | React Form Library        |
+| [React Helmet](https://github.com/nfl/react-helmet)              | SEO Lib in React          |
 | [TailwindCSS](https://tailwindcss.com/)                          | CSS Framework             |
 | [Sweet Alert2](https://sweetalert2.github.io/l)                  | Sweet Alert2              |
 | [React Icons](https://react-icons.github.io/react-icons/)        | React Icons Library       |
